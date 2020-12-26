@@ -16,12 +16,15 @@ const compareGuesses = (userChoice, compChoice, num) => {
     }
 };
 
-console.log(generateTarget());
-console.log(compareGuesses(1,1,1));
-console.log(compareGuesses(3,9,4));
-console.log(compareGuesses(9,3,1));
-
 // Updates scores
 const updateScore = winner => {
+    switch (winner) {
+        case 'human':
+            return humanScore++;
+        case 'computer':
+            return computerScore++;
+    }
+};
 
-}
+// Moves on to next round
+const advanceRound = () => currentRoundNumber++;
